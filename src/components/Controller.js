@@ -12,6 +12,7 @@ function Controller() {
 
   const {currentTrackIndex, currentTrackName, playPreviousTrack,playNextTrack,playTrack, isPlaying, togglePlay} = useMusicPlayer();
   return (
+    <>
     <Box>
         <SkipPreviousIcon onClick= {()=> playPreviousTrack()} />
         {isPlaying? (<PauseCircleOutlineIcon
@@ -20,8 +21,9 @@ function Controller() {
             sx={{height: 40, width: 40}} onClick= {()=> {currentTrackIndex? playTrack(currentTrackIndex): playTrack(0)}}
             />)}
         <SkipNextIcon onClick= {()=> playNextTrack()} />
-        <Typography variant='body1'>{currentTrackName}</Typography>
     </Box>
+        <Typography variant='body1'>{currentTrackName}</Typography>
+        </>
   )
 }
 
